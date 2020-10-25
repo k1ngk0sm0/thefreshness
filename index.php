@@ -24,6 +24,7 @@
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#">Menu</a>
                     <a class="nav-item nav-link" href="#">Contact Us</a>
+                    <a class="nav-item nav-link" href="#">Login</a>
                 </div>
             </div>
         </div>
