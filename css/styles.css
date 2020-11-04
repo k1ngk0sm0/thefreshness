@@ -2,13 +2,40 @@
     font-family: cursive;
 }
 
-/* .navbar-nav {
-    float: left;
-    margin: 0;
-    margin-left: 40%;
+.aboutIMG_1 {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Images/ladyFarmer.jpeg');
+}
+
+.aboutIMG_2 {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Images/aboutMeal.jpg');
+}
+
+.aboutHeader {
+    text-align: center;
+    margin: 5%;
+}
+
+.aboutTXT {
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 7%;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
  }
- 
- .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
-    margin-left: 0;
- } */
+
+.aboutLogo {
+    margin-left: 15%;
+    font-size: 7vw;
+}
+
+.aboutButton {
+    text-align: center;
+}
