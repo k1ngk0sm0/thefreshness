@@ -12,8 +12,10 @@
     <title>The Freshness</title>
   </head>
   <body>
+      
     <!-- Navbar and Logo -->
     <?php include('navbar.php'); ?>
+
     <!-- Main Content -->
     <div class="card mx-auto text-center" style="width: auto;">
         <img src="images/fresh_food.jpg" class="card-img-top" alt="...">

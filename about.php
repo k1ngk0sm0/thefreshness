@@ -12,9 +12,10 @@
     <title>The Freshness</title>
   </head>
   <body>
-    <!-- Navbar and Logo       -->
+
+    <!-- Navbar and Logo -->
     <?php include('navbar.php'); ?>
-    
+
     <!-- Main About Content -->
     <div class="container-fluid">
         <div class="row">
