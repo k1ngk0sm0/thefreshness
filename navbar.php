@@ -9,7 +9,7 @@
                     <a <?php if (stripos($_SERVER['REQUEST_URI'],'index.php') == true) {echo 'class="nav-item nav-link active"';} ?>class="nav-item nav-link" href="index.php">Home</a>
                     <a <?php if (stripos($_SERVER['REQUEST_URI'],'about.php') == true) {echo 'class="nav-item nav-link active"';} ?>class="nav-item nav-link" href="about.php">About</a>
                     <a class="nav-item nav-link" href="#">Menu</a>
-                    <a class="nav-item nav-link" href="#">Contact Us</a>
+                    <a <?php if (stripos($_SERVER['REQUEST_URI'],'contact.php') == true) {echo 'class="nav-item nav-link active"';} ?>class="nav-item nav-link" href="contact.php">Contact Us</a>
                     <a class="nav-item nav-link" href="#">Login</a>
                 </div>
             </div>
