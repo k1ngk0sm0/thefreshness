@@ -43,3 +43,15 @@
 .contactPrompt {
     text-align: center;
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
