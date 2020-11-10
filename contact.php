@@ -22,12 +22,12 @@
             <div class="col contactPrompt">
                 <br><br><br><br><br>
                 <h4>Questions? Comments? Kudos?</h4>
-                <h1>We value your input!</h1>
-                <p>Please take a moment to fill out the form to the right.</p>
+                <h1><em>We're here to listen!</em></h1>
+                <p>Please take a moment to fill out the following form.</p>
             </div>
             <div class="col">
                 <br><br><br><br>
-                <form class="needs-validation" novalidate>
+                <form method="post" action="message_processing.php" class="needs-validation" novalidate>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <input type="text" class="form-control" name="fname" placeholder="First Name*" required>
