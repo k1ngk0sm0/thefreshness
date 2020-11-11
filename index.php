@@ -33,9 +33,6 @@
   </body>
 
   <!-- Footer -->
-  <footer class="text-muted bg-success">
-    <span>Designed and Maintained by k1ng_k0sm0</span><br>
-    <span>2020 &#169; Low Life Royalty LLC</span>
-  </footer>
+  <?php include('footer.php'); ?>
   
 </html>
