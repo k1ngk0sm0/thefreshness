@@ -25,7 +25,7 @@
         // PHP functions to sanitize data input
         include "php_functions.php";
 
-        // Assign values returned by post to variables
+        // Sanitize user input and assign to variables
         $first = sanitizeMySQL($db_connection, $_POST['fname']);
         $last = sanitizeMySQL($db_connection, $_POST['lname']);
         $phone = sanitizeMySQL($db_connection, $_POST['phone']);
