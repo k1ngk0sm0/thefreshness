@@ -22,13 +22,16 @@
         // Connect to db
         include "db_connect.php";
 
+        // PHP functions to sanitize data input
+        include "php_functions.php";
+
         // Assign values returned by post to variables
-        $first = $_POST['fname'];
-        $last = $_POST['lname'];
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
+        $first = sanitizeMySQL($db_connection, $_POST['fname']);
+        $last = sanitizeMySQL($db_connection, $_POST['lname']);
+        $phone = sanitizeMySQL($db_connection, $_POST['phone']);
+        $email = sanitizeMySQL($db_connection, $_POST['email']);
+        $subject = sanitizeMySQL($db_connection, $_POST['subject']);
+        $message = sanitizeMySQL($db_connection, $_POST['message']);
 
         // SQL command assigned to variable
         $sql = "INSERT INTO messages(fname, lname, phone, email, subject, message)
@@ -36,7 +39,7 @@
 
         // Display succes to user if sql command is executed on database
         if (mysqli_query($db_connection, $sql)) {
-            echo "<br><br> <h1 style='text-align:center;'>Thanks for your feedback!</h1>";
+            echo "<br><br><br><br> <h1 style='text-align:center;'>Thanks for your feedback!</h1>";
         }
 
         // If unsuccesfull show error message
@@ -48,6 +51,11 @@
         mysqli_close($db_connection);
     ?>
 
+    <br><br>
+    <div class="d-flex justify-content-center">
+        <a href="index.php" class="btn btn-success" role="button" style="width:15%;">Back to Home</a>
+    </div>
+
 
         <!-- Bootstrap Javascript-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -55,9 +63,6 @@
 </body>
 
 <!-- Footer -->
-<footer class="text-muted bg-success">
-    <span>Designed and Maintained by k1ng_k0sm0</span><br>
-    <span>2020 &#169; Low Life Royalty LLC</span>
-</footer>
+<?php include('footer.php'); ?>
 
 </html>
