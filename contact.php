@@ -49,7 +49,7 @@
                         <div class="col-md-6 mb-3">
                             <input type="email" class="form-control" name="email" placeholder="Email*" required>
                             <div class="invalid-feedback">
-                                Please enter your email address.
+                                Please enter a valid email address.
                             </div>
                         </div>
                     </div>
