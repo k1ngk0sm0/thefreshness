@@ -14,7 +14,7 @@
   <body>
       
     <!-- Navbar and Logo -->
-    <?php include('navbar.php'); ?>
+    <?php require_once "navbar.php"; ?>
 
     <!-- Main Content -->
     <div class="card mx-auto text-center" style="width: auto;">
@@ -33,6 +33,6 @@
   </body>
 
   <!-- Footer -->
-  <?php include('footer.php'); ?>
+  <?php require_once "footer.php"; ?>
   
 </html>

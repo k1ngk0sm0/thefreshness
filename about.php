@@ -14,7 +14,7 @@
   <body>
 
     <!-- Navbar and Logo -->
-    <?php include('navbar.php'); ?>
+    <?php require_once 'navbar.php'; ?>
 
     <!-- Main About Content -->
     <div class="container-fluid">
@@ -50,6 +50,6 @@
   </body>
 
   <!-- Footer -->
-  <?php include('footer.php'); ?>
+  <?php require_once "footer.php"; ?>
   
 </html>
