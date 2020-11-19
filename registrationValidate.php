@@ -52,25 +52,25 @@
         }
         }
     if ($_POST['address'] != '') {
-         $username = sanitizeMySQL($db_connection, $_POST['address']);
+         $address = sanitizeMySQL($db_connection, $_POST['address']);
          $status['#registrationAddress'] = 'valid';
     } else {
         $status['#registrationAddress'] = 'Please enter your address.';
     }
     if ($_POST['city'] != '') {
-         $username = sanitizeMySQL($db_connection, $_POST['city']);
+         $city = sanitizeMySQL($db_connection, $_POST['city']);
          $status['#registrationCity'] = 'valid';
     } else {
         $status['#registrationCity'] = 'Please enter your city.';
     }
     if ($_POST['state'] != 'State') {
-         $username = sanitizeMySQL($db_connection, $_POST['state']);
+         $state = sanitizeMySQL($db_connection, $_POST['state']);
          $status['#registrationState'] = 'valid';
     } else {
         $status['#registrationState'] = 'Please select your state.';
     }
     if ($_POST['zip'] != '') {
-         $username = sanitizeMySQL($db_connection, $_POST['zip']);
+         $zip = sanitizeMySQL($db_connection, $_POST['zip']);
          $status['#registrationZip'] = 'valid';
     } else {
         $status['#registrationZip'] = 'Please enter your zip code.';
@@ -79,12 +79,16 @@
     $count = array_count_values($status);
     if (array_key_exists('valid', $count)) {
         if ($count['valid'] == 8) {
-            $status['registration'] = 'saved';
+            $passHash = password_hash($password1, PASSWORD_BCRYPT);
+            $sql = "INSERT INTO users(username, email, password, address, city, state, zip)
+                    VALUES('$username', '$email', '$passHash', '$address', '$city', '$state', '$zip')";
+            if (mysqli_query($db_connection, $sql)) {
+                $status['registration'] = 'saved';
+            } else {
+                $status['registration'] = 'failed';
+            }
         }
     }
-
-
-
 
     echo json_encode($status);
 ?>

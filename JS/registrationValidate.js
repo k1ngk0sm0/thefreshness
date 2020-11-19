@@ -33,12 +33,14 @@ $('document').ready(function() {
                         $(status).addClass('form-control is-valid')
                     } else if (response[status] == 'saved') {
                         window.location.href = "registrationSuccess.php"
-                    } else if (response[status] !== 'valid' && response[status] !== 'saved') {
+                    } else if (response[status] !== 'valid' && response[status] !== 'saved' && response[status] != 'failed') {
                         $(status).removeClass()
                         $(status).addClass('form-control is-invalid')
                         $(status).siblings("div").addClass('invalid-feedback')
                         $(status).siblings("div").text(response[status])
-                    } 
+                    } else if (response[status] == 'failed') {
+                        alert('Oops! Something went wrong.')
+                    }
                 }
             }
         })
