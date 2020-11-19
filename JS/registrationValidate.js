@@ -17,7 +17,7 @@ $('document').ready(function() {
             data: {
                 "username" : username,
                 "email" : email,
-                'password1' : password1,
+                "password1" : password1,
                 'password2' : password2,
                 'address' : address,
                 'city' : city,
@@ -28,17 +28,17 @@ $('document').ready(function() {
             cache: false,
             success: function(response) {
                 for (status in response){
-                    if (response[status] !== 'valid') {
+                    if (response[status] == 'valid') {
+                        $(status).removeClass()
+                        $(status).addClass('form-control is-valid')
+                    } else if (response[status] == 'saved') {
+                        window.location.href = "registrationSuccess.php"
+                    } else if (response[status] !== 'valid' && response[status] !== 'saved') {
                         $(status).removeClass()
                         $(status).addClass('form-control is-invalid')
                         $(status).siblings("div").addClass('invalid-feedback')
                         $(status).siblings("div").text(response[status])
-                    }
-                    else {
-                        $(status).removeClass()
-                        $(status).addClass('form-control is-valid')
-                    }
-                    
+                    } 
                 }
             }
         })

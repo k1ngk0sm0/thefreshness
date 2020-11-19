@@ -36,18 +36,21 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <input type="password" class="form-control" id="registrationPass1" placeholder="Password*">
-            <span></span>
+            <div></div>
           </div>
           <div class="form-group col-md-6">
             <input type="password" class="form-control" id="registrationPass2" placeholder="Re-Enter Your Password*">
+            <div></div>
           </div>
         </div>
         <div class="form-group">
           <input type="text" class="form-control" id="registrationAddress" placeholder="Address*">
+          <div></div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <input type="text" class="form-control" id="registrationCity" placeholder="City*">
+            <div></div>
           </div>
           <div class="form-group col-md-4">
             <select id="registrationState" class="form-control">
@@ -104,9 +107,11 @@
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
+            <div></div>
           </div>
           <div class="form-group col-md-2">
             <input type="text" class="form-control" id="registrationZip" placeholder="Zip Code">
+            <div></div>
           </div>
         </div>
         <button type="button" class="btn btn-primary bg-success" id="registrationButton">Sign Up</button>
