@@ -22,7 +22,7 @@
         <div class="card-body">
             <h5 class="card-title">Eating right has never been this easy.</h5>
             <p class="card-text">The Freshness offers meal kits sourced locally for optimum freshness and flavor. Check out our menu and give us a try!</p>
-            <a href="#" class="btn btn-success">Sign Up Now</a>
+            <a href="register.php" class="btn btn-success">Sign Up Now</a>
         </div>
     </div>
 

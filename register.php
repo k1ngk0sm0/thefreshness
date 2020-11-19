@@ -19,36 +19,39 @@
     <!-- Main Content -->
     <br><br>
     <div class="container">
-      <h1><u>Register</u></h1><br>
+      <h1><u>Register</u></h1>
     </div>
     <div class="container">
-      <form>
+      <form id="registrationForm">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="registrationUsername" placeholder="Username*" required>
+            <input type="text" class="form-control" id="registrationUsername" placeholder="Username*">
+            <div></div>
           </div>
           <div class="form-group col-md-6">
-            <input type="email" class="form-control" id="registrationEmail" placeholder="Email*" required>
+            <input type="email" class="form-control" id="registrationEmail" placeholder="Email*">
+            <div></div>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="password" class="form-control" id="registrationPass1" placeholder="Password*" required>
+            <input type="password" class="form-control" id="registrationPass1" placeholder="Password*">
+            <span></span>
           </div>
           <div class="form-group col-md-6">
-            <input type="password" class="form-control" id="registrationPass2" placeholder="Re-Enter Your Password*" required>
+            <input type="password" class="form-control" id="registrationPass2" placeholder="Re-Enter Your Password*">
           </div>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="registrationAddress" placeholder="Address*" required>
+          <input type="text" class="form-control" id="registrationAddress" placeholder="Address*">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="registrationCity" placeholder="City*" required>
+            <input type="text" class="form-control" id="registrationCity" placeholder="City*">
           </div>
           <div class="form-group col-md-4">
             <select id="registrationState" class="form-control">
-              <option selected>State</option>
+              <option class="text-muted" selected>State</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
@@ -103,17 +106,19 @@
             </select>
           </div>
           <div class="form-group col-md-2">
-            <input type="text" class="form-control" id="registrationZip" placeholder="Zip Code" required>
+            <input type="text" class="form-control" id="registrationZip" placeholder="Zip Code">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary bg-success">Register</button>
+        <button type="button" class="btn btn-primary bg-success" id="registrationButton">Sign Up</button>
       </form>
     </div><br><br>
 
 
-    <!-- Bootstrap Javascript-->
+    <!-- Javascript-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/registrationValidate.js"></script>
   </body>
 
   <!-- Footer -->
