@@ -32,6 +32,38 @@
         <p>Not already a member? Click here to <a href="register.php">Sign Up</a></p>
     </div>
 
+    <?php
+    //If the form has been submitted
+        if ($_SERVER['REQUEST_METHOD'] ==  "POST") {
+            // Collect entered username and password
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            // Connect to the database
+            include "db_connect.php";
+
+            // Collect password from database if username is valid
+            $sql = "SELECT password FROM users WHERE username='$username'";
+
+            // Run query
+            $result = mysqli_query($db_connection, $sql);
+
+            // If any rows are returned
+            if (mysqli_num_rows($result) > 0) {
+                // Assign stored password to variable
+                $hashed_password = mysqli_fetch_array($result, MYSQLI_ASSOC)['password'];
+            }
+
+            // Verify password
+            if (password_verify($password, $hashed_password)) {
+
+                echo "Login successful";
+            } else {
+                echo "username and password do not match";
+            }
+        }
+    ?>
+
 
     <!-- Bootstrap Javascript-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

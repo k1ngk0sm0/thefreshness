@@ -22,7 +22,7 @@
         <div class="card-body">
             <h5 class="card-title">Thanks for signing up!</h5>
             <p class="card-text">You now have access to the freshest local meal kits.</p>
-            <a href="#" class="btn btn-success">Log In</a>
+            <a href="login.php" class="btn btn-success">Log In</a>
         </div>
     </div>
     <br><br>
