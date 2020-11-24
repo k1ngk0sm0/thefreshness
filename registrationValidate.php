@@ -12,10 +12,13 @@
     } else {
         $username = sanitizeMySQL($db_connection, $_POST['username']);
         // Check that username is not already taken
-        $sql = "SELECT * FROM users WHERE username=$username";
+        $sql = "SELECT * FROM users WHERE username='$username'";
         $results = mysqli_query($db_connection, $sql);
-        if ($results) {
+        if (mysqli_num_rows($results) > 0) {
             $status['#registrationUsername'] = "Username is already in use.";
+            // Check that user name only contains letters and numbers
+        } else if (!preg_match('/^[a-zA-Z0-9]+$/', $username)) {
+            $status['#registrationUsername'] = "Username can only contain letters and numbers.";
         } else {
             $status['#registrationUsername'] = "valid";
         }
@@ -25,9 +28,9 @@
     } else {
         $email = sanitizeMySQL($db_connection, $_POST['email']);
         // Check if email is already taken
-        $sql = "SELECT * FROM users WHERE email=$email";
+        $sql = "SELECT * FROM users WHERE email='$email'";
         $results = mysqli_query($db_connection, $sql);
-        if ($results) {
+        if (mysqli_num_rows($results) > 0) {
             $status['#registrationEmail'] = 'Email is already in use.';
             // Check that input appears to be an email address
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -39,7 +42,7 @@
         $status['#registrationPass1'] = 'Please enter a password.';
     } else {
         $password1 = sanitizeMySQL($db_connection, $_POST['password1']);
-        // Enforce password security by testing against regex
+        // Enforce password security by testing against regex 
         $uppercase = preg_match('@[A-Z]@', $password1);
         $lowercase = preg_match('@[a-z]@', $password1);
         $number    = preg_match('@[0-9]@', $password1);
