@@ -57,9 +57,17 @@
             // Verify password
             if (password_verify($password, $hashed_password)) {
 
-                echo "Login successful";
+                // Put username into the session
+                session_start();
+                $_SESSION['username'] = $username;
+
+                // Redirect to home page
+                header('Location: index.php');
+
             } else {
-                echo "username and password do not match";
+                ?> 
+                <p id='login_error'>Username and password do not match.</p>
+                <?php
             }
         }
     ?>

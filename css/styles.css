@@ -60,3 +60,7 @@ textarea {
     resize: none;
 }
 
+#login_error {
+    text-align: center;
+    color: red;
+}
