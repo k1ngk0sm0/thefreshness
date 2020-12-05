@@ -60,7 +60,12 @@ textarea {
     resize: none;
 }
 
-#login_error {
+.errorMessage {
     text-align: center;
     color: red;
+}
+
+.successMessage {
+    text-align: center;
+    color: green;
 }

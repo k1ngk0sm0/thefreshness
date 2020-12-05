@@ -14,7 +14,7 @@
                     <?php
                         if (isset($_SESSION['username'])) {
                             ?>
-                            <a <?php if (stripos($_SERVER['REQUEST_URI'],'account.php') == true) {echo 'class="nav-item nav-link active"';} ?>class="nav-item nav-link" href="account.php">Account</a>
+                            <a <?php if (stripos($_SERVER['REQUEST_URI'],'customer_account.php') == true) {echo 'class="nav-item nav-link active"';} ?>class="nav-item nav-link" href="customer_account.php">Account</a>
                             <a <?php if (stripos($_SERVER['REQUEST_URI'],'logout.php') == true) {echo 'class="nav-item nav-link active"';} ?>class="nav-item nav-link" href="logout.php">Logout</a>
                             <?php
                         } else {

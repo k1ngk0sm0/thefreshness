@@ -61,12 +61,12 @@
                 session_start();
                 $_SESSION['username'] = $username;
 
-                // Redirect to home page
-                header('Location: index.php');
+                // Redirect to customer account page
+                header('Location: customer_account.php');
 
             } else {
                 ?> 
-                <p id='login_error'>Username and password do not match.</p>
+                <p class="errorMessage">Username and password do not match.</p>
                 <?php
             }
         }
