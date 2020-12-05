@@ -50,27 +50,32 @@
             // Run query
             $result = mysqli_query($db_connection, $sql);
 
-            // If any rows are returned
-            if (mysqli_num_rows($result) > 0) {
+            // If username isnt found
+            if (mysqli_num_rows($result) == 0) {
+                ?> 
+                    <p class="errorMessage">Username and password do not match.</p>
+                <?php
+            } else {
                 // Assign stored password to variable
                 $hashed_password = mysqli_fetch_array($result, MYSQLI_ASSOC)['password'];
+                // Verify password
+                if (password_verify($password, $hashed_password)) {
+    
+                    // Put username into the session
+                    session_start();
+                    $_SESSION['username'] = $username;
+    
+                    // Redirect to customer account page
+                    header('Location: customer_account.php');
+    
+                } else {
+                    ?> 
+                    <p class="errorMessage">Username and password do not match.</p>
+                    <?php
+                }
+
             }
 
-            // Verify password
-            if (password_verify($password, $hashed_password)) {
-
-                // Put username into the session
-                session_start();
-                $_SESSION['username'] = $username;
-
-                // Redirect to customer account page
-                header('Location: customer_account.php');
-
-            } else {
-                ?> 
-                <p class="errorMessage">Username and password do not match.</p>
-                <?php
-            }
         }
     ?>
 
