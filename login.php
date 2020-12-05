@@ -30,6 +30,7 @@
                 <button type="submit" class='btn btn-primary bg-success'>Log In</button>
             </form><br>
             <p>Not already a member? Click here to <a href="register.php">Sign Up</a></p>
+
         </div>
     </div>
 

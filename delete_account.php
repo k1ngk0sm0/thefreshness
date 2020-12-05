@@ -40,7 +40,9 @@
                     echo "<p class='errorMessage'>An Error Has Occured.";
                 }
             }
-        } else { 
+        } else { ?>
+            <script>alert('Your account has been deleted!')</script> 
+            <?php
             header('Location: login.php');
         }
     ?>

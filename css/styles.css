@@ -73,6 +73,8 @@ textarea {
 /* These two are to center a div vertically */
 .outerContainer {
     position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .innerContainer {

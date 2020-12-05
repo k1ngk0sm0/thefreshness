@@ -17,61 +17,61 @@
     <?php require_once 'navbar.php'; ?>
 
     <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col contactPrompt">
-                <br><br><br><br><br>
-                <h4>Questions? Comments? Kudos?</h4>
-                <h1><em>We're here to listen!</em></h1>
-                <p>Please take a moment to fill out the following form.</p>
-            </div>
-            <div class="col">
-                <br><br><br><br>
-                <form method="post" action="message_processing.php" class="needs-validation" novalidate>
-                    <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" name="fname" placeholder="First Name*" required>
-                            <div class="invalid-feedback">
-                                Please enter your first name.
+    <div class="container outerContainer">
+        <div class='container innerContainer'>
+            <div class="row">
+                <div class="col contactPrompt">
+                    <br>
+                    <h4>Questions? Comments? Kudos?</h4>
+                    <h1><em>We're here to listen!</em></h1>
+                    <p>Please take a moment to fill out the following form.</p>
+                </div>
+                <div class="col">
+                    <form method="post" action="message_processing.php" class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" name="fname" placeholder="First Name*" required>
+                                <div class="invalid-feedback">
+                                    Please enter your first name.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" name="lname" placeholder="Last Name*" required>
+                                <div class="invalid-feedback">
+                                    Please enter your last name.
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" name="lname" placeholder="Last Name*" required>
-                            <div class="invalid-feedback">
-                                Please enter your last name.
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone (Optional)">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Email*" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" name="phone" placeholder="Phone (Optional)">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="Email*" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid email address.
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject*" required>
+                                <div class="invalid-feedback">
+                                    Please enter a subject line.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col">
-                            <input type="text" class="form-control" name="subject" placeholder="Subject*" required>
-                            <div class="invalid-feedback">
-                                Please enter a subject line.
+                        <div class="form-row">
+                            <div class="col">
+                                <textarea class="form-control" rows="6" name="message" placeholder="Enter your message here*" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter a message.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col">
-                            <textarea class="form-control" rows="6" name="message" placeholder="Enter your message here*" required></textarea>
-                            <div class="invalid-feedback">
-                                Please enter a message.
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary bg-success" type="submit">Submit</button>
-                </form>
-                <br>
+                        <button class="btn btn-primary bg-success" type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
