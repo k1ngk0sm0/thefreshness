@@ -7,6 +7,6 @@ setcookie(session_name(), '', time() - 2592000, '/');
 session_destroy();
 
 // Redirect to home page
-header('Location: index.php');
+header('Location: login.php');
 
 ?>

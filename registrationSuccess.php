@@ -17,15 +17,13 @@
     <?php require_once "navbar.php"; ?>
 
     <!-- Main Content -->
-    <br><br>
-    <div class="card text-center">
-        <div class="card-body">
+    <div class="card text-center outerContainer">
+        <div class="card-body innerContainer">
             <h5 class="card-title">Thanks for signing up!</h5>
             <p class="card-text">You now have access to the freshest local meal kits.</p>
             <a href="login.php" class="btn btn-success">Log In</a>
         </div>
     </div>
-    <br><br>
 
 
     <!-- Bootstrap Javascript-->

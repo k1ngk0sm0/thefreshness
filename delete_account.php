@@ -20,18 +20,27 @@
     <?php
         if (isset($_SESSION['username'])) {
             $username = $_SESSION['username']; ?>
-            <div class='container outerContainer'>
-                <div class='container innerContainer'>
-                    <?php echo "<h1>Welcome, $username!</h1>"; ?><br>                   
-                    <a href="#">Account Details</a>
-                    <a href="#">View Purchase History</a>
-                    <a href="change_password.php">Change Password</a>
-                    <a href="delete_account.php">Delete Account</a>
+            <div class="card text-center outerContainer">
+                <div class="card-body innerContainer">
+                    <h1 class='card-title'>We're sorry to see you go!</h1>
+                    <p class='card-text'>You are about to delete your account, are you sure you wish to proceed?</p>
+                    <form action="delete_account.php" method='post'>
+                        <button type='submit' class='btn btn-success'>Yes</button>
+                        <a href="customer_account.php" class='btn btn-danger'>No</a>
+                    </form>
                 </div>
             </div>
             <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                include 'db_connect.php';
+                $sql = "DELETE FROM users WHERE username='$username'";
+                if (mysqli_query($db_connection, $sql)) {
+                    include 'logout.php';
+                } else {
+                    echo "<p class='errorMessage'>An Error Has Occured.";
+                }
+            }
         } else { 
-            // Redirect to login
             header('Location: login.php');
         }
     ?>

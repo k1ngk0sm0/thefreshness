@@ -20,18 +20,19 @@
     <?php
         if (isset($_SESSION['username'])) {
             $username = $_SESSION['username']; ?>
-            <br><br><br>
-            <div class='container col-md-4'>
-                <h3><u>Change Password</u></h3><br>
-                <form action="change_password.php" method='post'>
-                    <div class='form-row'>
-                        <input type="password" class='form-control' name='password1' placeholder='Enter Your New Password'>
-                    </div><br>
-                    <div class='form-row'>
-                        <input type="password" class='form-control' name='password2' placeholder='Re-Enter Your New Password'>
-                    </div><br>
-                    <button type="submit" class='btn btn-primary bg-success'>Submit</button><br><br>
-                </form>
+            <div class='container outerContainer col-md-4'>
+                <div class='container innerContainer'>
+                    <h3><u>Change Password</u></h3><br>
+                    <form action="change_password.php" method='post'>
+                        <div class='form-row'>
+                            <input type="password" class='form-control' name='password1' placeholder='Enter Your New Password'>
+                        </div><br>
+                        <div class='form-row'>
+                            <input type="password" class='form-control' name='password2' placeholder='Re-Enter Your New Password'>
+                        </div><br>
+                        <button type="submit" class='btn btn-primary bg-success'>Submit</button>
+                    </form>
+                </div>
             </div>
             <?php
             // If form has been submitted
@@ -60,17 +61,12 @@
                         if (mysqli_query($db_connection, $sql)) {
                             echo "<p class='successMessage'>Password Successfully Changed.</p>";
                         } else {
-                            echo "<p class='errorMessage'>An Error Has Occured</p>";
+                            echo "<p class='errorMessage'>An Error Has Occured.</p>";
                         }
                     }                }
             }
-        } else { ?>
-            <div class='container col-6'>
-                <br><br><br>
-                <h1>You are not logged in!</h1>
-                <p>Click here to <a href="login.php">login.</a></p>
-            </div>
-            <?php
+        } else { 
+            header('Location: login.php');
         }
     ?>
 

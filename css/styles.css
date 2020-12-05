@@ -69,3 +69,16 @@ textarea {
     text-align: center;
     color: green;
 }
+
+/* These two are to center a div vertically */
+.outerContainer {
+    position: relative;
+}
+
+.innerContainer {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* ******* */

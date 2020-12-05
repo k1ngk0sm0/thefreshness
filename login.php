@@ -17,19 +17,20 @@
     <?php require_once "navbar.php"; ?>
 
     <!-- Main Content -->
-    <br><br><br>
-    <div class='container col-md-4'>
-        <h4>Show us your bona fides!</h4><br>
-        <form action="login.php" method='post'>
-            <div class='form-row'>
-                <input type="username" class='form-control' name='username' placeholder="username">
-            </div><br>
-            <div class='form-row'>
-                <input type="password" class='form-control' name='password' placeholder="password">
-            </div><br>
-            <button type="submit" class='btn btn-primary bg-success'>Log In</button>
-        </form><br>
-        <p>Not already a member? Click here to <a href="register.php">Sign Up</a></p>
+    <div class='container outerContainer col-md-4'>
+        <div class='container innerContainer'>
+            <h3>Show us your bona fides!</h3><br>
+            <form action="login.php" method='post'>
+                <div class='form-row'>
+                    <input type="username" class='form-control' name='username' placeholder="username">
+                </div><br>
+                <div class='form-row'>
+                    <input type="password" class='form-control' name='password' placeholder="password">
+                </div><br>
+                <button type="submit" class='btn btn-primary bg-success'>Log In</button>
+            </form><br>
+            <p>Not already a member? Click here to <a href="register.php">Sign Up</a></p>
+        </div>
     </div>
 
     <?php
