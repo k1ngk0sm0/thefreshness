@@ -34,15 +34,17 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 include 'db_connect.php';
                 $sql = "DELETE FROM users WHERE username='$username'";
-                if (mysqli_query($db_connection, $sql)) {
-                    include 'logout.php';
+                if (mysqli_query($db_connection, $sql)) { ?>
+                    <script>
+                        alert('Your account has been deleted!');
+                        window.location.href="logout.php";
+                    </script>
+                    <?php
                 } else {
                     echo "<p class='errorMessage'>An Error Has Occured.";
                 }
             }
-        } else { ?>
-            <script>alert('Your account has been deleted!')</script> 
-            <?php
+        } else { 
             header('Location: login.php');
         }
     ?>
