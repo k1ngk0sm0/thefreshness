@@ -23,7 +23,7 @@
             <div class='container outerContainer'>
                 <div class='container innerContainer'>
                     <?php echo "<h1>Welcome, $username!</h1>"; ?><br>                   
-                    <a href="#">Account Details</a>
+                    <a href="account_details.php">Account Details</a>
                     <a href="#">View Purchase History</a>
                     <a href="change_password.php">Change Password</a>
                     <a href="delete_account.php">Delete Account</a>

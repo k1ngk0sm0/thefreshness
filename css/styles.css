@@ -84,3 +84,7 @@ textarea {
     justify-content: center;
 }
 /* ******* */
+
+td {
+    padding: 15px;
+}
